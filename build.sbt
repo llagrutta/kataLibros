@@ -16,3 +16,5 @@ libraryDependencies += "com.googlecode.jmockit" % "jmockit" % "1.7"
 play.Project.playJavaSettings
 
 jacoco.settings
+
+itJacoco.settings
