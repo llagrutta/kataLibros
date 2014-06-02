@@ -13,7 +13,7 @@ public class LibroService {
 		return Double.valueOf(response.getBody());
 	}
 	
-	public Integer discount(int quantity){
+	public Integer discount(int quantity) throws IlegalQuantityException{
 		return libroDao.discount(quantity);
 	}
 	
