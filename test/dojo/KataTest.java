@@ -5,8 +5,10 @@ import mockit.Mocked;
 
 import org.junit.Test;
 
+import service.IlegalQuantityException;
 import service.LibroService;
 import static org.fest.assertions.Assertions.*;
+import static org.junit.Assert.fail;
 
 /*
  * Hay una saga que tiene 5 libros en total. Como está de moda, existe una promoción por comprar los distintos libros de la saga
@@ -16,11 +18,15 @@ import static org.fest.assertions.Assertions.*;
  *  
  * Crear un algoritmo que dado una compra de libros, te devuelva el precio total calculando el mayor descuento posible.
  * 
- * Ejemplo: [0,1,1,2,2,2] 
+ * Ejemplo: [0,1,1,2,2,2] (un libro de la clase 0, dos de la clase 1 y tres de la clase 2 )
  * El precio sería = (precio de 0+1+2 con un B% de descuento) + (precio de 1+2 con un A% de descuento) + (precio de 2)
  * 
  * Tanto el valor X del libro, como los valores A,B,C y D de los descuentos se obtienen mediante una llamada a los servicios
  * expuestos en LibroService.
+ * 
+ * El algoritmo debe contemplar que el método del servicio que calcula el descuento para una cantidad dada puede levantar una excepción,
+ * y las cantidades para las cuales la levanta podrían variar en un futuro cercano
+ * 
  */
 
 public class KataTest {
@@ -46,7 +52,20 @@ public class KataTest {
 	}
 	
 	@Test
-	public void test3() {
-		assertThat(0).isEqualTo(0);
+	public void test3() throws IlegalQuantityException{
+		service = new LibroService(); 
+		boolean exceptionThrown=false;
+		new Expectations() {{
+			service.discount(6);
+			result= new IlegalQuantityException();		
+		}};
+		
+		try {
+			service.discount(6);
+		} catch (IlegalQuantityException e) {
+			exceptionThrown=true;
+		}
+		if(!exceptionThrown)
+			fail("must throws IlegalQuantityException");
 	}
 }

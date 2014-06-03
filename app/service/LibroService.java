@@ -14,6 +14,8 @@ public class LibroService {
 	}
 	
 	public Integer discount(int quantity) throws IlegalQuantityException{
+		if((quantity<1)||(quantity>5))
+				throw new IlegalQuantityException();
 		return libroDao.discount(quantity);
 	}
 	
