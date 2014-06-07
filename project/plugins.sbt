@@ -9,4 +9,5 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 // Use the Play sbt plugin for Play projects
 
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.2.3")
+
 addSbtPlugin("info.schleichardt" % "sbt-sonar" % "TODO")
