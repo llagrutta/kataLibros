@@ -10,4 +10,4 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.2.3")
 
-addSbtPlugin("info.schleichardt" % "sbt-sonar" % "TODO")
+addSbtPlugin("info.schleichardt" % "sbt-sonar" % "0.2.0-SNAPSHOT")
