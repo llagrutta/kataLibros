@@ -10,6 +10,12 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "com.googlecode.jmockit" % "jmockit" % "1.7"
 
+libraryDependencies += "com.sun.jersey" % "jersey-client" % "1.8"
+
+libraryDependencies += "com.sun.jersey" % "jersey-server" % "1.8"
+
+libraryDependencies += "com.sun.jersey" % "jersey-json" % "1.8"
+
 play.Project.playJavaSettings
 
 sonarSettings

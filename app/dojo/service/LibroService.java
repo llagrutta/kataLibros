@@ -1,7 +1,7 @@
-package service;
+package dojo.service;
 
 import play.libs.WS;
-import dao.LibroDao;
+import dojo.dao.LibroDao;
 
 /**
  * @author rfanego
@@ -14,8 +14,9 @@ public class LibroService {
 	}
 	
 	public Integer discount(int quantity) throws IlegalQuantityException{
-		if((quantity<1)||(quantity>5))
-				throw new IlegalQuantityException();
+		if((quantity < 1) || (quantity > 5)){
+			throw new IlegalQuantityException();
+		}
 		return libroDao.discount(quantity);
 	}
 	
