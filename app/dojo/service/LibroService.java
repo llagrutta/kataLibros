@@ -1,5 +1,7 @@
 package dojo.service;
 
+import java.util.List;
+
 import play.libs.WS;
 import dojo.dao.LibroDao;
 
@@ -24,4 +26,5 @@ public class LibroService {
 		WS.Response response = WS.url("http://localhost:9000/book/price").get().get(5000L);
 		return Integer.valueOf(response.getBody());
 	}
+
 }
