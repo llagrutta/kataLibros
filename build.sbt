@@ -20,5 +20,4 @@ play.Project.playJavaSettings
 
 sonarSettings
 
-sonarProperties := sonarProperties.value ++ 
-Map("sonar.projectName" -> "KataLibros main", "new.key" -> "katalibros")
+sonarProperties := sonarProperties.value ++ Map("sonar.projectName" -> "KataLibros main", "new.key" -> "katalibros")
