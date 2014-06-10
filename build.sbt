@@ -26,5 +26,3 @@ sonarSettings
 sonarProperties := sonarProperties.value ++ Map("sonar.projectName" -> "KataLibros main", "sonar.projectKey" -> "katalibrosmain")
 
 jacoco.settings
-
-itJacoco.settings
