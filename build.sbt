@@ -1,3 +1,6 @@
+import de.johoop.jacoco4sbt._
+import JacocoPlugin._
+
 name := "KataLibro"
 
 version := "1.0-SNAPSHOT"
@@ -21,3 +24,5 @@ play.Project.playJavaSettings
 sonarSettings
 
 sonarProperties := sonarProperties.value ++ Map("sonar.projectName" -> "KataLibros main", "sonar.projectKey" -> "katalibrosmain")
+
+jacoco.settings
