@@ -19,3 +19,6 @@ libraryDependencies += "com.sun.jersey" % "jersey-json" % "1.8"
 play.Project.playJavaSettings
 
 sonarSettings
+
+sonarProperties := sonarProperties.value ++ 
+Map("sonar.projectName" -> "KataLibros main", "new.key" -> "katalibros")
